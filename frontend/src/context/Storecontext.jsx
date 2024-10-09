@@ -1,15 +1,15 @@
 import {createContext} from 'react';
 import {food_list} from '../assets/assets'
 
-export const Storecontext=createContext(null)
-const StoreContextProvider=(props)=>{
+export const StoreContext=createContext()
+const StoreContextProvider=({children})=>{
     const contextvalue={
         food_list
     }
     return(
-        <Storecontext.Provider value={contextvalue}>
-            {props.children}
-        </Storecontext.Provider>
+        <StoreContext.Provider value={contextvalue}>
+            {children}
+        </StoreContext.Provider>
         )
 }
 export default StoreContextProvider
